@@ -1,0 +1,66 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserWallet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.User) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserWallet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserStatus)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
