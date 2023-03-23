@@ -19,7 +19,9 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/PRN221_Group3_Project_HotelManagement.styles.css" asp-append-version="true" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <header>
@@ -36,7 +38,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index" title="Home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/#" title="All rooms">Rooms</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Booking/Index" title="All rooms">List Rooms</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" title="Privacy">Privacy</a>
@@ -53,7 +55,7 @@
                              </a>       
                              <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">       
                                  <li><a class="dropdown-item" asp-area="" asp-page="/Profile/Index" title="Profile">My Profile</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Bookings/Index" title="Dao_Code">Bookings</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Bookings/Index" title="Bookings">Bookings</a></li>
                                 @if (user.UserId == 1)       
                                  {       
                                      <li><a class="dropdown-item" asp-area="" asp-page="/Rooms/Index" title="Rooms management">Rooms Management</a></li>           
@@ -91,7 +93,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>     
        $("#img_upload").change(function () {     

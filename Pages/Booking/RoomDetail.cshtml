@@ -1,0 +1,80 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Booking.RoomDetailModel
+@{
+}
+<link href="~/css/thanhpn.css" rel="stylesheet" />
+<!-- our project just needs Font Awesome Solid + Brands -->
+<script src="https://kit.fontawesome.com/717bf3d3c2.js" crossorigin="anonymous"></script>
+
+<section class="container">
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-page="../Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-page="./Index">List Rooms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Room Detail</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-lg-6 col-md-12">
+            <img class="img-fluid" src="@Model.RoomHotel.RoomImage" style="height: 380px; width: 580px" />
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <p><span class="fs-5 fw-bold">Room:</span>&nbsp;@Model.RoomHotel.RoomName</p>
+                    <p><span class="fs-5 fw-bold">Type:</span>&nbsp;@Model.TypeName</p>
+                    <p><span class="fs-5 fw-bold">Bed:</span>&nbsp;@Model.RoomHotel.RoomBed <i class="fa-solid fa-bed"></i></p>
+                    <p class="fs-5 fw-bold text-danger">Price:&nbsp;$@Model.RoomHotel.RoomPrice</p>
+                </div>
+                <div class="row col-7 justify-content-between">
+                    <label class="fs-5 fw-bold">Room Amentities:</label>
+                    <div class="col-5">
+                        <p><i class="fa-solid fa-shower align-items-center"></i>&nbsp;Shower</p>
+                        <p><i class="fa-solid fa-key"></i>&nbsp;Safe</p>
+                        <p><i class="fa-solid fa-person-walking-luggage"></i>&nbsp;Luggage</p>
+                    </div>
+                    <div class="col-6">
+                        <p><i class="fa-solid fa-bell-concierge"></i>&nbsp;Concierge</p>
+                        <p><i class="fa-solid fa-user-shield"></i>&nbsp;Private</p>
+                        <p><i class="fa-solid fa-people-group"></i>&nbsp;24/7 Service</p>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-primary mb-2" style="width: 150px" asp-page="./Checkout" asp-route-rid="@Model.RoomHotel.RoomId">Booking</a>
+            <div>
+                <p class="fs-5 fw-bold">Description: </p>
+                <div class="form-floating">
+                    <textarea readonly class="form-control overflow-auto" style="height: 100px">@Model.RoomHotel.RoomDesc</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="p-hr mt-3">Recommend Rooms</p>
+
+    <div class="row justify-content-around">
+        @foreach (var item in Model.roomRmd)
+        {
+            <div class="col-lg-4 mb-3">
+                <a class="text-decoration-none text-black" asp-page="./RoomDetail" asp-route-rid="@item.RoomId">
+                    <div class="card w-100">
+                        <div class="row g-0 no-copy" style="height: 150px">
+                            <div class="col-5">
+                                <img src="@item.RoomImage" class="img-fluid rounded-start h-100 w-100" alt="@item.RoomName">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body w-100">
+                                    <h5 class="card-title">@item.RoomName</h5>
+                                    <div class="div-overflow">
+                                        <p class="card-text text-overflow">@item.RoomDesc</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>

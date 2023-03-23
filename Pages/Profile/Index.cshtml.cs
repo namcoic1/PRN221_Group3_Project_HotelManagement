@@ -60,10 +60,23 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Profile
         [Compare("new_password", ErrorMessage = "New and confirm password doesn't match")]
         public string confirm_pass { get; set; }
 
+        private void setSessionUser()
+        {
+            string json = HttpContext.Session.GetString("user");
+            User userSession = JsonConvert.DeserializeObject<User>(json);
+            HttpContext.Session.Remove("user");
+            User new_user = context.Users.FirstOrDefault(u => u.UserId == userSession.UserId);
+            HttpContext.Session.SetString("user", JsonConvert.SerializeObject(new_user));
+        }
+
         public void OnGet()
         {
             string json = HttpContext.Session.GetString("user");
-            User user = JsonConvert.DeserializeObject<User>(json);
+            User userSession = JsonConvert.DeserializeObject<User>(json);
+            HttpContext.Session.Remove("user");
+            User user = context.Users.FirstOrDefault(u => u.UserId == userSession.UserId);
+            HttpContext.Session.SetString("user", JsonConvert.SerializeObject(user));
+
             user_id = user.UserId;
             img_profile = user.UserImage;
             user_phone = user.UserPhone.Trim();
@@ -90,7 +103,10 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Profile
                     rel_path = "/images/users/" + user_img.FileName;
                     User user = context.Users.First();
                     user.UserImage = rel_path;
+
                     context.SaveChanges();
+
+                    setSessionUser();
 
                 }
                 catch (Exception exc)
@@ -98,6 +114,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Profile
                     return new JsonResult("error");
                 }
             }
+
+
 
             return new JsonResult(rel_path);
         }
@@ -108,7 +126,10 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Profile
             User user = context.Users.FirstOrDefault(x => x.UserId == user_id);
             user.UserName = user_name;
             user.UserPhone = user_phone;
+
             context.SaveChanges();
+
+            setSessionUser();
         }
 
         [HttpPost]
@@ -121,6 +142,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Profile
                 {
                     user.UserPassword = new_password;
                     context.SaveChanges();
+
+                    setSessionUser();
                     return new JsonResult(0);
                 }
                 else
