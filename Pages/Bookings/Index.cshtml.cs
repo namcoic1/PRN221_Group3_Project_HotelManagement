@@ -29,6 +29,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Bookings
                 .Include(o => o.Order)
                 .Include(o => o.Room).ToListAsync();
             }
+            int userId = 1;
+            ViewData["userId"] = userId;
         }
     }
 }

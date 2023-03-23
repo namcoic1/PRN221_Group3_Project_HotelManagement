@@ -35,7 +35,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.OrderDetail) {
-            @if(item.Order.UserId == 1)
+            @if (item.Order.UserId == ViewBag.userId)
             {
                 <tr>
                     <td>
