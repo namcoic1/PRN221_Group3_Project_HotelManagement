@@ -4,7 +4,157 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet"        
+      href="https://htmldemo.net/boighor/boighor/css/plugins.css" />        
+<link rel="stylesheet"        
+      href="https://htmldemo.net/boighor/boighor/css/style.css" />        
+
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="/images/hotel_hue.png" class="d-block" alt="Hotel in Hue">
+        </div>
+        <div class="swiper-slide">
+            <img src="/images/hotel_hcm.png" class="d-block" alt="Hotel in HCM">
+        </div>
+        <div class="swiper-slide">
+            <img src="/images/hotel_quynhon.png" class="d-block" alt="Hotel in Quy Nhon">
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
 </div>
+
+<section class="mx-3 my-5">
+    <div class="row">                
+        <div class="col-12">                
+            <div class="text-center">                
+                <h3>                
+                    Type Rooms       
+                </h3>                
+                <p>                
+                    There are many varieties type rooms available     
+                </p>                
+            </div>                
+        </div>                
+    </div>                
+    <div class="furniture--4 owl-carousel auto-play mt-3">     
+       @foreach (var type in Model.typeRooms)     
+       {     
+           <a asp-area="" asp-page="#" title="View rooms of @type.TypeName">     
+               <div class="card-item m-1">     
+               <img class="card-image" src="@type.TypeImage" alt="Type Room @type.TypeName" />     
+                   <div class="card-body">     
+                       <h5 class="card-title">@type.TypeName</h5>     
+                       <p class="card-text">@type.TypeDesc</p>     
+                   </div>     
+               </div>     
+           </a>     
+       }     
+    </div>     
+</section>
+
+<section class="mx-5 p-5" style="background-color:#EEEEEE">
+    <div class="row">         
+        <div class="col-lg-5 col-md-4 col-12">    
+            <img src="/images/welcome_hotel.png" alt="Image welcome hotel"/>    
+        </div>    
+        <div class="col-lg-7 col-md-8 col-12">                
+            <div class="section__title text-center">                
+                <h2>Explore Us</h2>                
+            </div>                
+            <div class="newsletter__block text-center">                
+                <p>                
+                    Follow us now and stay up-to-date with new type rooms, special rooms, and exclusive offers.                
+                    <br>    
+                    <button type="button" class="mt-4 btn btn-primary"><a asp-area="" asp-page="/AccessPage/Register" style="color:white; text-decoration:none" title="Register account">Register now</a></button>                
+                </p>                
+            </div>                
+        </div>                
+    </div>                
+</section>
+
+<section class="mx-3 my-5">
+     <div class="row">               
+         <div class="col-12">               
+             <div class="text-center">               
+                 <h3>               
+                     Honeymoon suite        
+                 </h3>               
+                 <p>               
+                     There are many varieties honeymoon suite rooms available    
+                 </p>               
+             </div>               
+         </div>               
+     </div>               
+     <div class="furniture--4 owl-carousel mt-3">    
+        @foreach (var item in Model.roomHotels)    
+        {    
+            <a asp-area="" asp-page="#" title="View detail of @item.RoomName Room">    
+                    <div class="card-item m-1">    
+                    <img class="card-image" src="@item.RoomImage" alt="Room Hotel @item.RoomName" />    
+                    <div class="card-body">    
+                        <h5 class="card-title">Room: @item.RoomName</h5>    
+                        @{    
+                            string roomType = Model.typeRooms.FirstOrDefault(type => type.TypeId == item.TypeId).TypeName;    
+                        }    
+                        <h6 class="card-text">Type: @roomType</h6>     
+                        <p class="card-text pt-1">@item.RoomDesc</p>    
+                    </div>    
+                </div>    
+            </a>    
+        }    
+     </div>    
+</section>
+
+<section class="mx-5 p-5" style="margin-bottom:60px; background-color:#EEEEEE">
+    <div class="container">        
+        <div class="row">        
+            <div class="col-lg-12">        
+                <div class="footer__widget footer__menu">        
+                    <div class="ft__logo text-center">        
+                        <a asp-area="" asp-page="/Index" title="Hotel home">        
+                            <img src="/images/logo_hotel.png" style="height:50px; width:70px" alt="Image logo hotel" />        
+                        </a>        
+                        <p>        
+                            Welcome to our hotel. At here, our hotel have many type of rooms available that you can book more. Thanks you for using our services.         
+                        </p>        
+                    </div>        
+                    <div class="footer__content">          
+                        <ul class="mainmenu d-flex justify-content-center">        
+                            <li><a asp-area="" asp-page="#">Rooms</a></li>        
+                            <li><a asp-area="" asp-page="/Privacy">Privacy</a></li>        
+                            <li><a asp-area="" asp-page="/Contact">Contact</a></li>        
+                        </ul>        
+                    </div>        
+                </div>        
+            </div>        
+        </div>        
+    </div>        
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://htmldemo.net/boighor/boighor/js/vendor/jquery.min.js"></script>
+<script src="https://htmldemo.net/boighor/boighor/js/plugins.js"></script>        
+<script src="https://htmldemo.net/boighor/boighor/js/active.js"></script>        
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>

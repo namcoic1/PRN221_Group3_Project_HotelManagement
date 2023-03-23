@@ -5,12 +5,16 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detail room</h1>
+<hr />
 
 <div>
-    <h4>RoomHotel</h4>
-    <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            <img src="@Html.DisplayFor(model => model.RoomHotel.RoomImage)" style="width:220px;height:140px" alt="Image room"/>
+        </dt>
+        <dd class="col-sm-10">
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RoomHotel.RoomName)
         </dt>
@@ -18,44 +22,45 @@
             @Html.DisplayFor(model => model.RoomHotel.RoomName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.RoomImage)
+            Bed
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.RoomImage)
+            @Html.DisplayFor(model => model.RoomHotel.RoomBed) @(Model.RoomHotel.RoomBed > 1 ? "beds" : "bed")
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.RoomBed)
+            Description
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.RoomBed)
+            <i>@Html.DisplayFor(model => model.RoomHotel.RoomDesc)</i>
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.RoomDesc)
+            @Html.DisplayNameFor(model => model.RoomHotel.RoomPrice) 
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.RoomDesc)
+            @Html.DisplayFor(model => model.RoomHotel.RoomPrice) <span style="color:red">$</span>
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.RoomPrice)
+            Status
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.RoomPrice)
+            @if (Model.RoomHotel.RoomStatus == 1)
+            {
+                <span style="color:forestgreen">Active</span>
+            }
+            else
+            {
+                <span style="color:red">Deactive</span>
+            }
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.RoomStatus)
+            TypeName
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.RoomStatus)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RoomHotel.Type)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RoomHotel.Type.TypeId)
+            @Html.DisplayFor(model => model.TypeRoom.TypeName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.RoomHotel?.RoomId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <button class="btn btn-primary"><a asp-page="./Edit" asp-route-id="@Model.RoomHotel?.RoomId" style="color:white; text-decoration:none" title="Edit room">Edit room</a></button>
+    <button class="btn btn-primary"><a asp-page="./Index" style="color:white; text-decoration:none" title="Back list room">Back to List</a></button>
 </div>

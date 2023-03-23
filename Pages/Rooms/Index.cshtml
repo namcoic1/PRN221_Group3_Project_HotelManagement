@@ -1,38 +1,52 @@
 ﻿@page
 @model PRN221_Group3_Project_HotelManagement.Pages.Rooms.IndexModel
+@using Microsoft.AspNetCore.Http;
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Rooms";
 }
 
-<h1>Index</h1>
+<div class="row">
+    <div class="col-9">
+        <h1><a asp-area="" asp-page="/Rooms/Index" style="color:black;text-decoration:none" title="Reload page">List rooms</a></h1>
+    </div>
+    <div class="col-3">
+        <form method="get">
+            <div class="py-3 d-flex justify-content-end align-content-end">
+                <input asp-for="@Model.Search" class="form-control me-1"/>
+                <button class="btn btn-primary" type="submit" title="Searching">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <button class="btn btn-primary"><a asp-page="Create" style="color:white; text-decoration:none" title="Add new room">Add New</a></button>
 </p>
-<table class="table">
+
+<table class="table table-bordered table-hover table-light">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomName)
+                RoomName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomImage)
+                Image
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomBed)
+                Bed
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomDesc)
+                Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomPrice)
+                RoomPrice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].RoomStatus)
+                Status
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomHotel[0].Type)
+                TypeName
             </th>
             <th></th>
         </tr>
@@ -44,29 +58,53 @@
                 @Html.DisplayFor(modelItem => item.RoomName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomImage)
+                <img src="@Html.DisplayFor(modelItem => item.RoomImage)" style="width:190px;height:140px" alt="Image room"/>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomBed)
+                @Html.DisplayFor(modelItem => item.RoomBed) @(item.RoomBed > 1 ? "beds" : "bed")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomDesc)
+                <i>@Html.DisplayFor(modelItem => item.RoomDesc)</i>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomPrice)
+                @Html.DisplayFor(modelItem => item.RoomPrice) <span style="color:red">$</span>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomStatus)
+                    @if (item.RoomStatus == 1)
+                    {
+                        <span style="color:forestgreen">Active</span>
+                    }
+                    else
+                    {
+                        <span style="color:red">Deactive</span>
+                    }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type.TypeId)
+                @Html.DisplayFor(modelItem => item.Type.TypeName)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.RoomId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.RoomId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.RoomId">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.RoomId" style="text-decoration:none; font-weight:bold" title="Edit room">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.RoomId" style="text-decoration:none; font-weight:bold" title="View room">Detail</a>
+                <a asp-page="./Delete" asp-route-id="@item.RoomId" style="text-decoration:none; font-weight:bold" title="Delete room">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@section Scripts {
+    @if (Model.Room != null)
+    {
+        <script>       
+             swal({       
+                 title: "Operation @Model.Room.RoomName room successfully!",       
+                 text: "Let's click to 'OK' to return list rooms!",       
+                 icon: "success",       
+                 button: "OK",       
+             }).then(function () {
+                 window.location = "/Rooms/Index";       
+             });       
+        </script>
+        HttpContext.Session.Remove("operate");
+    }
+}

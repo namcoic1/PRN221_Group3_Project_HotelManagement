@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,30 +9,47 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
     public class EditModel : PageModel
     {
         private readonly PRN221_Group3_Project_HotelManagement.Models.Booking_Hotel_DBContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public EditModel(PRN221_Group3_Project_HotelManagement.Models.Booking_Hotel_DBContext context)
+        public EditModel(PRN221_Group3_Project_HotelManagement.Models.Booking_Hotel_DBContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         [BindProperty]
-        public RoomHotel RoomHotel { get; set; } = default!;
+        public RoomHotel Room_Hotel { get; set; }
+        [BindProperty]
+        public string Status { get; set; }
+
+        List<string> _Status = new List<string>()
+        {
+                "Active", "Deactive"
+        };
+        public string Message { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.RoomHotels == null)
+            if (HttpContext.Session.GetString("user") != null)
             {
-                return NotFound();
-            }
+                if (id == null || _context.RoomHotels == null)
+                {
+                    return NotFound();
+                }
 
-            var roomhotel =  await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
-            if (roomhotel == null)
-            {
-                return NotFound();
+                var roomhotel = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
+                if (roomhotel == null)
+                {
+                    return NotFound();
+                }
+                Room_Hotel = roomhotel;
+
+                ViewData["ImageRoom"] = Room_Hotel.RoomImage;
+                ViewData["TypeId"] = new SelectList(_context.TypeRooms, "TypeId", "TypeName");
+                ViewData["StatusRoom"] = new SelectList(_Status);
+                return Page();
             }
-            RoomHotel = roomhotel;
-           ViewData["TypeId"] = new SelectList(_context.TypeRooms, "TypeId", "TypeId");
-            return Page();
+            return RedirectToPage("/AccessPage/Login");
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -48,15 +61,34 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
                 return Page();
             }
 
-            _context.Attach(RoomHotel).State = EntityState.Modified;
+            RoomHotel _RoomHotel = _context.RoomHotels.FirstOrDefault(r => r.RoomId == Room_Hotel.RoomId);
+            if (Request.Form.Files.Count > 0)
+            {
+                var FileUpload = Request.Form.Files[0];
+                var file = Path.Combine(_hostEnvironment.WebRootPath, "images/rooms", FileUpload.FileName);
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await FileUpload.CopyToAsync(fileStream);
 
+                }
+                Room_Hotel.RoomImage = "/images/rooms/" + FileUpload.FileName;
+                _RoomHotel.RoomImage = Room_Hotel.RoomImage;
+                //_context.Attach(Room_Hotel).State = EntityState.Modified;
+            }
+            _RoomHotel.RoomName = Room_Hotel.RoomName;
+            _RoomHotel.RoomBed = Room_Hotel.RoomBed;
+            _RoomHotel.RoomDesc = Room_Hotel.RoomDesc;
+            _RoomHotel.RoomStatus = Status.Equals("Active") ? 1 : 0;
+            _RoomHotel.RoomPrice = Room_Hotel.RoomPrice;
+            _RoomHotel.TypeId = Room_Hotel.TypeId;
             try
             {
                 await _context.SaveChangesAsync();
+                Message = "Success";
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RoomHotelExists(RoomHotel.RoomId))
+                if (!RoomHotelExists(Room_Hotel.RoomId))
                 {
                     return NotFound();
                 }
@@ -65,13 +97,15 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
                     throw;
                 }
             }
-
-            return RedirectToPage("./Index");
+            ViewData["ImageRoom"] = _RoomHotel.RoomImage;
+            ViewData["TypeId"] = new SelectList(_context.TypeRooms, "TypeId", "TypeName");
+            ViewData["StatusRoom"] = new SelectList(_Status);
+            return Page();
         }
 
         private bool RoomHotelExists(int id)
         {
-          return _context.RoomHotels.Any(e => e.RoomId == id);
+            return _context.RoomHotels.Any(e => e.RoomId == id);
         }
     }
 }
