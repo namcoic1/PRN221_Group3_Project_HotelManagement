@@ -1,0 +1,77 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Bookings.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Booking Lists</h1>
+
+<table class="table table-bordered table-hover table-light mt-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Order.OrderNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Order.OrderCheckin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Order.OrderCheckout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Order.OrderCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetail[0].Order.OrderStatus)
+            </th>
+
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.OrderDetail) {
+            @if(item.Order.UserId == 1)
+            {
+                <tr>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem =>item.Room.RoomImage)" style="width:200px;height:160px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.OrderNote)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.OrderCheckin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.OrderCheckout)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.OrderCreated)
+                    </td>
+                    <td>
+                        @if (item.Order.OrderStatus == 1)
+                        {
+                            <p>Active</p>
+                        }
+                        @if (item.Order.OrderStatus == 0)
+                        {
+                            <p>DeActive</p>
+                        }
+
+                    </td>
+
+
+                    <td>
+                        <a class="text-decoration-none" asp-page="./Details" asp-route-id="@item.DetailId">Details</a>
+                    </td>
+                </tr>
+            }
+            
+}
+    </tbody>
+</table>

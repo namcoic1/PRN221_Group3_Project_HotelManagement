@@ -20,12 +20,19 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
 
         public IList<User> User { get;set; } = default!;
 
+
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
-            if (_context.Users != null)
+            IQueryable<User> userIQ = from s in _context.Users
+                                            select s;
+            if (!String.IsNullOrEmpty(SearchString))
             {
-                User = await _context.Users.ToListAsync();
+                userIQ = userIQ.Where(userIQ => userIQ.UserName.Contains(SearchString));
             }
+            User = userIQ.ToList();
         }
     }
 }
