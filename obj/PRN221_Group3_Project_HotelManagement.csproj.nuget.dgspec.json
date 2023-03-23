@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\term_7\\PRN221\\git_control\\project\\NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {}
+    "D:\\Lammauchonam\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {}
   },
   "projects": {
-    "D:\\term_7\\PRN221\\git_control\\project\\NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {
+    "D:\\Lammauchonam\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\term_7\\PRN221\\git_control\\project\\NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
+        "projectUniqueName": "D:\\Lammauchonam\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
         "projectName": "PRN221_Group3_Project_HotelManagement",
-        "projectPath": "D:\\term_7\\PRN221\\git_control\\project\\NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\term_7\\PRN221\\git_control\\project\\NamNH\\PRN221_Group3_Project_HotelManagement\\obj\\",
+        "projectPath": "D:\\Lammauchonam\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
+        "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
+        "outputPath": "D:\\Lammauchonam\\PRN221_Group3_Project_HotelManagement\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

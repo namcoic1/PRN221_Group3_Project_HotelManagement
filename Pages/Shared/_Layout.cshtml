@@ -52,12 +52,13 @@
                                  Hello, @user.UserName!       
                              </a>       
                              <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">       
-                                 <li><a class="dropdown-item" asp-area="" asp-page="/Profile/Index" title="Profile">My Profile</a></li>       
-                                 @if (user.UserId == 1)       
+                                 <li><a class="dropdown-item" asp-area="" asp-page="/Profile/Index" title="Profile">My Profile</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Bookings/Index" title="Dao_Code">Bookings</a></li>
+                                @if (user.UserId == 1)       
                                  {       
                                      <li><a class="dropdown-item" asp-area="" asp-page="/Rooms/Index" title="Rooms management">Rooms Management</a></li>           
-                                     <li><a class="dropdown-item" asp-area="" asp-page="#" title="Orders management">Orders Management</a></li>           
-                                     <li><a class="dropdown-item" asp-area="" asp-page="#" title="Users management">Users Management</a></li>           
+                                     <li><a class="dropdown-item" asp-area="" asp-page="/Orders/Index" title="Orders management">Orders Management</a></li>           
+                                     <li><a class="dropdown-item" asp-area="" asp-page="/Users/Index" title="Users management">Users Management</a></li>           
                                  }       
                                  <li><hr class="dropdown-divider"></li>       
                                  <li><a class="dropdown-item" asp-area="" asp-page="/AccessPage/Login" asp-page-handler="Logout" title="Log out hotel">Log out</a></li>       
@@ -102,6 +103,15 @@
                $("#img_preview").attr("src", URL.createObjectURL(file));     
            }     
        });     
+        $("#FileUpload").change(function () {
+            var file = this.files[0];     
+           var file_type = file.type;     
+           if (!file_type.startsWith("image/")) {     
+               swal("Warning!", "Please upload an image file!", "warning");     
+           } else {     
+               $("#img_preview").attr("src", URL.createObjectURL(file));     
+           }     
+       });  
    </script>
 
     @await RenderSectionAsync("Scripts", required: false)

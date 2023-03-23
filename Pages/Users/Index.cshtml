@@ -5,14 +5,29 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Users List</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
+<div class="d-flex">
+    <div>
+        <button type="button" class="btn btn-primary">
+            <a class="text-decoration-none text-white" asp-page="Create">Create New</a>
+        </button>
+    </div>
+    <div class="ms-auto">
+        <form asp-page="./Index" method="get">
+            <div class="d-flex">
+                <input class="form-control" type="text" id="search" asp-for="SearchString" placeholder="Search by User Name"/>
+                <input class="btn btn-primary" type="submit" value="Search" /><br />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-hover table-light mt-4">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].UserImage)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.User[0].UserPhone)
             </th>
@@ -22,21 +37,22 @@
             <th>
                 @Html.DisplayNameFor(model => model.User[0].UserName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].UserImage)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.User[0].UserWallet)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.User[0].UserStatus)
             </th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.User) {
         <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem =>item.UserImage)" style="width:200px;height:160px" />
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserPhone)
             </td>
@@ -46,19 +62,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserImage)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.UserWallet)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserStatus)
+                    @if (item.UserStatus == 1)
+                    {
+                                <p>Active</p>
+                    }
+                    @if (item.UserStatus == 0)
+                    {
+                            <p>DeActive</p>
+                    }
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
+                    <a class="text-decoration-none" asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
+                    <a class="text-decoration-none" asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
+                    <a class="text-decoration-none" asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
             </td>
         </tr>
 }

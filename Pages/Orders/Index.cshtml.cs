@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PRN221_Group3_Project_HotelManagement.Models;
 
-namespace PRN221_Group3_Project_HotelManagement.Pages.Users
+namespace PRN221_Group3_Project_HotelManagement.Pages.Orders
 {
     public class IndexModel : PageModel
     {
@@ -18,21 +18,25 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
             _context = context;
         }
 
-        public IList<User> User { get;set; } = default!;
-
+        public IList<Order> Order { get;set; } = default!;
 
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
 
         public async Task OnGetAsync()
         {
-            IQueryable<User> userIQ = from s in _context.Users
-                                            select s;
+            if (_context.Orders != null)
+            {
+                Order = await _context.Orders
+                .Include(o => o.User).ToListAsync();
+            }
+            IQueryable<Order> orderIQ = from s in _context.Orders
+                                      select s;
             if (!String.IsNullOrEmpty(SearchString))
             {
-                userIQ = userIQ.Where(userIQ => userIQ.UserName.Contains(SearchString));
+                orderIQ = orderIQ.Where(orderIQ => orderIQ.User.UserName.Contains(SearchString));
             }
-            User = userIQ.ToList();
+            Order = orderIQ.ToList();
         }
     }
 }
