@@ -52,7 +52,7 @@
                                  Hello, @user.UserName!       
                              </a>       
                              <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">       
-                                 <li><a class="dropdown-item" asp-area="" asp-page="#" title="Profile">My Profile</a></li>       
+                                 <li><a class="dropdown-item" asp-area="" asp-page="/Profile/Index" title="Profile">My Profile</a></li>       
                                  @if (user.UserId == 1)       
                                  {       
                                      <li><a class="dropdown-item" asp-area="" asp-page="/Rooms/Index" title="Rooms management">Rooms Management</a></li>           
