@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Markup;
@@ -31,13 +32,11 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
         [BindProperty]
         public string selected { get; set; }
 
-
-    
-        [DataType(DataType.Upload)]
-        //[FileExtensions(Extensions = "png,jpg,jpeg,gif")]
-        [Display(Name = "Choose a file to upload")]
-        [BindProperty]
-        public IFormFile FileUpload { get; set; }
+        //[DataType(DataType.Upload)]
+        ////[FileExtensions(Extensions = "png,jpg,jpeg,gif")]
+        //[Display(Name = "Choose a file to upload")]
+        //[BindProperty]
+        //public IFormFile FileUpload { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -51,6 +50,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
             {
                 return NotFound();
             }
+            user.UserPhone = user.UserPhone.Trim();
+            ViewData["ImageSrc"] = user.UserImage;
             User = user;
             return Page();
         }
@@ -63,22 +64,30 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
             {
                 return Page();
             }
-            if (FileUpload != null)
-            {
-
-                var file = Path.Combine(_hostEnvironment.WebRootPath, "images", FileUpload.FileName);
-                using (var fileStream = new FileStream(file, FileMode.Create))
+            User user = _context.Users.FirstOrDefault(x => x.UserId == User.UserId);
+            if(Request.Form.Files.Count > 0) {
+                var FileUpload = Request.Form.Files[0];
+                if (FileUpload != null)
                 {
-                    await FileUpload.CopyToAsync(fileStream);
 
+                    var file = Path.Combine(_hostEnvironment.WebRootPath, "images/users", FileUpload.FileName);
+                    using (var fileStream = new FileStream(file, FileMode.Create))
+                    {
+                        await FileUpload.CopyToAsync(fileStream);
+
+                    }
+                    user.UserImage = "/images/users/" + FileUpload.FileName;
                 }
-                User.UserImage = "/images/" + FileUpload.FileName;
             }
-
+            user.UserStatus = User.UserStatus;
+            user.UserWallet = User.UserWallet;
+            user.UserName= User.UserName;
+            user.UserPassword = User.UserPassword;
+            user.UserPhone = User.UserPhone;
             short status = short.Parse(selected);
-            User.UserStatus = status;
+            user.UserStatus = status;
             
-            _context.Attach(User).State = EntityState.Modified;
+            _context.Attach(user).State = EntityState.Modified;
 
             try
             {

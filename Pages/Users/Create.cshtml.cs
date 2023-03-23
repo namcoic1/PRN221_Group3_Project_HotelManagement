@@ -51,13 +51,13 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Users
             if (FileUpload != null)
             {
 
-                var file = Path.Combine(_hostEnvironment.WebRootPath, "images", FileUpload.FileName);
+                var file = Path.Combine(_hostEnvironment.WebRootPath, "images/users", FileUpload.FileName);
                 using (var fileStream = new FileStream(file, FileMode.Create))
                 {
                     await FileUpload.CopyToAsync(fileStream);
 
                 }
-                User.UserImage = "/images/" + FileUpload.FileName;
+                User.UserImage = "/images/users/" + FileUpload.FileName;
             }
 
             short status = short.Parse(selected);

@@ -8,15 +8,19 @@
 <h1>Edit User</h1>
 
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form method="post" enctype="multipart/form-data">
+            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="User.UserId" />
             <div class="form-group">
-                <label asp-for="@Model.FileUpload" class="control-label"></label>
-                <input asp-for="@Model.FileUpload" class="form-control" accept="image/png, image/jpeg, image/jpg"/>
-                <span asp-validation-for="@Model.FileUpload" class="text-danger"></span>
+                <img src="@ViewBag.ImageSrc" id="img_preview" style="width:200px;height:150px" alt="Image room" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Upload Image</label>
+                <input type="file" id="img_upload" name="img_upload" accept="image/*" value="@ViewBag.ImageSrc" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="User.UserPhone" class="control-label"></label>

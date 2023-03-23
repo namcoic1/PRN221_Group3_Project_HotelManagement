@@ -13,20 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\Screenshot (1).png",
-      "PackagePath": "staticwebassets\\images\\Screenshot (1).png"
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\Screenshot (1).png",
+      "PackagePath": "staticwebassets\\images\\rooms\\Screenshot (1).png"
     },
     {
-      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotelimage.jpg",
-      "PackagePath": "staticwebassets\\images\\hotelimage.jpg"
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotelimage.jpg",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotelimage.jpg"
     },
     {
-      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotelimage2.jpg",
-      "PackagePath": "staticwebassets\\images\\hotelimage2.jpg"
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotelimage2.jpg",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotelimage2.jpg"
     },
     {
-      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotelimage3.jpg",
-      "PackagePath": "staticwebassets\\images\\hotelimage3.jpg"
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotelimage3.jpg",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotelimage3.jpg"
+    },
+    {
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\Screenshot (1).png",
+      "PackagePath": "staticwebassets\\images\\users\\Screenshot (1).png"
+    },
+    {
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage.jpg"
+    },
+    {
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage2.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage2.jpg"
+    },
+    {
+      "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage3.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage3.jpg"
     },
     {
       "Id": "D:\\UploadProject\\PRN221_Group3_Project_HotelManagement\\wwwroot\\js\\site.js",

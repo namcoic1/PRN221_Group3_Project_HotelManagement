@@ -45,6 +45,18 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+        <script>     
+       $("#img_upload").change(function () {     
+           var file = this.files[0];     
+           var file_type = file.type;     
+           if (!file_type.startsWith("image/")) {     
+               swal("Warning!", "Please upload an image file!", "warning");     
+           } else {     
+               $("#img_preview").attr("src", URL.createObjectURL(file));     
+           }     
+       });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
