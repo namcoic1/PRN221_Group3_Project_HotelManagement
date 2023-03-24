@@ -44,6 +44,7 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
                 }
                 Room_Hotel = roomhotel;
 
+                Status = Room_Hotel.RoomStatus == 1 ? "Active" : "Deactive";
                 ViewData["ImageRoom"] = Room_Hotel.RoomImage;
                 ViewData["TypeId"] = new SelectList(_context.TypeRooms, "TypeId", "TypeName");
                 ViewData["StatusRoom"] = new SelectList(_Status);
@@ -97,6 +98,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
                     throw;
                 }
             }
+
+            Status = _RoomHotel.RoomStatus == 1 ? "Active" : "Deactive";
             ViewData["ImageRoom"] = _RoomHotel.RoomImage;
             ViewData["TypeId"] = new SelectList(_context.TypeRooms, "TypeId", "TypeName");
             ViewData["StatusRoom"] = new SelectList(_Status);
