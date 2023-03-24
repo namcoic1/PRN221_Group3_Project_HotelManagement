@@ -31,7 +31,7 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Orders
             }
 
             var order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
-            var orderdetail = await _context.OrderDetails.FirstOrDefaultAsync(m => m.DetailId == id);
+            var orderdetail = await _context.OrderDetails.FirstOrDefaultAsync(m => m.OrderId == id);
             var room = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == orderdetail.RoomId);
             ViewData["OrderDetailLists"] = orderdetail;
             ViewData["RoomLists"] = room;
