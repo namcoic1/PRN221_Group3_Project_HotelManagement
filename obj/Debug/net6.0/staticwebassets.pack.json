@@ -1,247 +1,339 @@
 {
   "Files": [
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\PRN221_Group3_Project_HotelManagement.bundle.scp.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\PRN221_Group3_Project_HotelManagement.bundle.scp.css",
       "PackagePath": "staticwebassets\\PRN221_Group3_Project_HotelManagement.bundle.scp.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\css\\site.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\favicon.ico",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\css\\thanhpn.css",
+      "PackagePath": "staticwebassets\\css\\thanhpn.css"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\js\\site.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotel_hcm.png",
+      "PackagePath": "staticwebassets\\images\\hotel_hcm.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotel_hue.png",
+      "PackagePath": "staticwebassets\\images\\hotel_hue.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\hotel_quynhon.png",
+      "PackagePath": "staticwebassets\\images\\hotel_quynhon.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\logo_hotel.png",
+      "PackagePath": "staticwebassets\\images\\logo_hotel.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\dog1.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\dog1.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_binhthuan.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_binhthuan.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_dn.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_dn.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_hcm.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_hcm.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_hn.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_hn.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_hue.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_hue.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_quynhon.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\hotel_quynhon.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\default.png",
+      "PackagePath": "staticwebassets\\images\\users\\default.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\dog1.png",
+      "PackagePath": "staticwebassets\\images\\users\\dog1.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\dog2.png",
+      "PackagePath": "staticwebassets\\images\\users\\dog2.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage.jpg"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage2.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage2.jpg"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\hotelimage3.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\hotelimage3.jpg"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\ios-11-gm-wallpaper-moon-1504976373790 (4).jpg",
+      "PackagePath": "staticwebassets\\images\\users\\ios-11-gm-wallpaper-moon-1504976373790 (4).jpg"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\pixabay_BWOG.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\pixabay_BWOG.jpg"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\users\\tải xuống.png",
+      "PackagePath": "staticwebassets\\images\\users\\tải xuống.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\welcome_hotel.png",
+      "PackagePath": "staticwebassets\\images\\welcome_hotel.png"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\js\\profile.js",
+      "PackagePath": "staticwebassets\\js\\profile.js"
+    },
+    {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -1,0 +1,159 @@
+﻿@page
+@using Models
+@model PRN221_Group3_Project_HotelManagement.Pages.Booking.IndexModel
+<link href="~/css/thanhpn.css" rel="stylesheet" />
+@{
+    Booking_Hotel_DBContext _context = new Booking_Hotel_DBContext();
+}
+
+<section>
+    <div class="container">
+        <div class="mb-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-page="../Index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">List Rooms</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+                <form asp-page="./Index" method="get">
+                    @*search*@
+                    <div class="mb-2">
+                        <label for="search" class="form-label">Search:</label>
+                        <input class="form-control" type="text" id="search" asp-for="SearchString" />
+                    </div>
+
+                    @*select-type-room*@
+                    <div class="mb-2">
+                        <label for="selectType" class="form-label">Room type:</label>
+                        <select class="form-select" id="selectType" asp-for="TypeId">
+                            <option value="0" hidden>--none--</option>
+                            @foreach (var item in _context.TypeRooms.ToList())
+                            {
+                                <option value="@item.TypeId">@item.TypeName</option>
+                            }
+                        </select>
+                    </div>
+
+                    @*select-bed*@
+                    <div class="mb-2">
+                        <label for="selectBed" class="form-label">Room bed:</label>
+                        <select class="form-select select-icon" id="selectBed" asp-for="SelectBed">
+                            <option value="0" hidden>--none--</option>
+                            @for (int i = 1; i <= 4; i++)
+                            {
+                                <option value="@i">@(i) &#xf236</option>
+                            }
+                        </select>
+                    </div>
+
+                    @*customer-range-price*@
+                    <div class="d-flex justify-content-between mb-2">
+                        <label for="customRange" class="form-label">Room price:</label>
+                        <span id="valBox">@(Model.PriceRange > 0 ? Model.PriceRange + "$" : "0$")</span>
+                    </div>
+                    <input oninput="showValue()" type="range" class="form-range" min="0" max="@Model.MaxPrice" asp-for="PriceRange" id="customRange">
+
+                    @*sort*@
+                    <div class="mb-2">
+                        <label for="selectSort" class="form-label">Sort by:</label>
+                        <select class="form-select select-icon" id="selectSort" asp-for="SortBy">
+                            <option hidden>--none--</option>
+                            <option value="NameAsc">Room name &#xf062</option>
+                            <option value="NameDesc">Room name &#xf063</option>
+                            <option value="BedAsc">Bed &#xf062</option>
+                            <option value="BedDesc">Bed &#xf063</option>
+                            <option value="PriceAsc">Price &#xf062</option>
+                            <option value="PriceDesc">Price &#xf063</option>
+                        </select>
+                    </div>
+
+                    @*btnFilter + btnReset*@
+                    <div class="d-flex justify-content-between">
+                        <input class="btn btn-primary" type="submit" value="Filter" /><br />
+                        <a class="btn btn-secondary" asp-page="./Index" role="button">Reset</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container col-lg-9">
+
+                <div class="row">
+                    @if (Model.rooms.Count() == 0)
+                    {
+                        <p>No result is found.</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.rooms)
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-5">
+                                <a class="text-decoration-none text-black" asp-page="./RoomDetail" asp-route-rid="@item.RoomId">
+                                    @*card*@
+                                    <div class="card no-copy w-100">
+                                        <img class="card-img-top card-image" src="@item.RoomImage" alt="Image for Room @item.RoomName" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Room: @item.RoomName</h5>
+                                            @{
+                                                string roomType = _context.TypeRooms.FirstOrDefault(type => type.TypeId == item.TypeId).TypeName;
+                                            }
+                                            <p class="card-text">Type: @roomType</p>
+                                            <p class="card-text select-icon">Bed: @(item.RoomBed) &#xf236</p>
+                                            <p class="card-text text-danger fw-bold">Price: $@(item.RoomPrice)</p>
+                                            <div class="mt-3">
+                                                <a asp-page="./Checkout" asp-route-rid="@item.RoomId" class="btn btn-primary btn-outline-success text-white w-100">Booking</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+
+                @*paigning*@
+                @if (Model.TotalRoom > Model.PageSize)
+                {
+                    <nav>
+                        @{
+                            var prevDisabled = !Model.rooms.HasPreviousPage ? "disabled" : "";
+                            var nextDisabled = !Model.rooms.HasNextPage ? "disabled" : "";
+                        }
+                        <ul class="pagination">
+                            <li class="page-item @prevDisabled">
+                                <a asp-page="./Index" asp-route-typeId="@Model.TypeId" asp-route-pageIndex="@(Model.rooms.PageIndex - 1)"
+                               asp-route-SearchString="@Model.SearchString" asp-route-selectBed="@Model.SelectBed"
+                               asp-route-priceRange="@Model.PriceRange" asp-route-SortBy="@Model.SortBy"
+                               class="page-link"><span aria-hidden="true">&laquo;</span></a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPage; i++)
+                            {
+                                <li class="page-item @(Model.PageIndex == i ? "active" : "")">
+                                    <a asp-page="./Index" asp-route-typeId="@Model.TypeId" asp-route-pageIndex="@i"
+                               asp-route-SearchString="@Model.SearchString" asp-route-selectBed="@Model.SelectBed"
+                               asp-route-priceRange="@Model.PriceRange" asp-route-SortBy="@Model.SortBy"
+                               class="page-link">@i</a>
+                                </li>
+                            }
+                            <li class="page-item @nextDisabled">
+                                <a asp-page="./Index" asp-route-typeId="@Model.TypeId" asp-route-pageIndex="@(Model.rooms.PageIndex + 1)"
+                               asp-route-SearchString="@Model.SearchString" asp-route-selectBed="@Model.SelectBed"
+                               asp-route-priceRange="@Model.PriceRange" asp-route-SortBy="@Model.SortBy"
+                               class="page-link">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function showValue() {
+        valBox.innerHTML = customRange.value + "$";
+    }
+</script>

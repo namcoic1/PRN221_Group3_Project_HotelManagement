@@ -1,0 +1,192 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Booking.CheckoutModel
+<link href="~/css/thanhpn.css" rel="stylesheet" />
+@if (ViewBag.Success == null)
+{
+    <section>
+        <div class="mb-3">
+            <h3>Checkout</h3>
+        </div>
+
+        <div class="container row justify-content-center">
+            <div class="row justify-content-around align-items-start">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="toast align-items-center bg-danger border-0 fade show w-100" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                <p class="select-icon fw-bold">&#xf071 Error! @ViewBag.Error</p>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                }
+                <div class="container col-lg-6 mt-2">
+                    <img class="img-fluid" src="@Model.RoomHotel.RoomImage" style="height:400px; width:600px" />
+                    <p class="p-hr" style="margin-top: 10px">Timeline</p>
+                    <ul class="list-group list-group-flush @(Model.TimeLine.Count > 0 ? "time-line" : "")" style="height: 150px">
+                        @if (Model.TimeLine.Count == 0)
+                        {
+                            <li class="list-group-item text-secondary fst-italic">No one booked this room.</li>
+                        }
+                        else
+                        {
+                            @foreach (var item in Model.TimeLine)
+                            {
+                                <li class="list-group-item text-secondary fst-italic">@(item) (Booked)</li>
+                            }
+                        }
+                    </ul>
+                </div>
+
+                <form class="container col-lg-4 col-md-8" method="post">
+
+                    <p class="p-hr">Customer Information</p>
+                    @*uname*@
+                    <div class="mb-2 row align-items-center">
+                        <label for="uname" class="form-label col-3">Customer</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="@ViewBag.User.UserName" readonly id="uname">
+                        </div>
+                    </div>
+                    @*uphone*@
+                    <div class="mb-2 row align-items-center">
+                        <label for="uphone" class="form-label col-3">Phone</label>
+                        <div class="col-9">
+                            <input class="form-control col-8" type="text" value="@ViewBag.User.UserPhone" readonly id="uphone">
+                        </div>
+                    </div>
+
+                    <p class="p-hr">Booking Information</p>
+                    @*rname*@
+                    <div class="mb-2 row align-items-center">
+                        <label for="rname" class="form-label col-3">Room</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="@Model.RoomHotel.RoomName" readonly>
+                        </div>
+                    </div>
+                    @*rbed*@
+                    <div class="mb-2 row align-items-center">
+                        <label for="rbed" class="form-label col-3">Bed</label>
+                        <div class="col-9">
+                            <input class="form-control col-8" type="text" value="@Model.RoomHotel.RoomBed" readonly id="rbed">
+                        </div>
+                    </div>
+                    @*rprice*@
+                    <div class="mb-2 row align-items-center">
+                        <label for="rprice" class="form-label col-3">Price</label>
+                        <div class="col-9">
+                            <input class="form-control col-8" type="text" value="$@Model.RoomHotel.RoomPrice" readonly id="rprice">
+                        </div>
+                    </div>
+                    @*check-in*@
+                    <div class="mb-2 row align-items-center">
+                        <label class="form-label col-3 text-danger fw-bold">Check-in</label>
+                        <div class="col-9">
+                            <input id="check_in" class="form-control text-danger fw-bold" asp-for="Checkin" onchange="funcTotalPrice()" />
+                        </div>
+                    </div>
+                    @*check-out*@
+                    <div class="mb-2 row align-items-center">
+                        <label class="form-label col-3 text-danger fw-bold">Check-out</label>
+                        <div class="col-9">
+                            <input id="check_out" class="form-control text-danger fw-bold" asp-for="Checkout" onchange="funcTotalPrice()" />
+                        </div>
+                    </div>
+                    @*note*@
+                    <div class="mb-2">
+                        <label for="note" class="form-label">Note</label>
+                        <textarea class="form-control" placeholder="Others requirements..." name="note" id="note" rows="3"></textarea>
+                    </div>
+                    @*total*@
+                    <div class="row align-items-center">
+                        <label for="total" class="form-label col-3">Total</label>
+                        <div class="col-9">
+                            <input id="total" class="form-control" name="totalPrice" type="text" value="$@Model.RoomHotel.RoomPrice" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-2 row mt-5 justify-content-end">
+                        <span class="btn btn-warning" style="width: 100px; margin-right: 10px" data-bs-toggle="modal" data-bs-target="#cfCheckout">Checkout</span>
+                        <a asp-page="./Index" asp- class="btn btn-secondary" style="width: 100px;margin-right: 10px">Cancel</a>
+                    </div>
+                    <div class="modal fade" id="cfCheckout" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-danger select-icon" id="exampleModalCenterTitle">&#xf071 Confirm checkout</h1>
+                                    <span class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you book this room?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-warning" asp-route-rid="@Model.RoomHotel.RoomId">Yes, checkout&nbsp; <span id="abc">$@(Model.RoomHotel.RoomPrice)</span></button>
+                                    <span class="btn btn-secondary" data-bs-dismiss="modal">No</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <section class="page_404">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center">
+                    <div class="four_zero_four_bg">
+                        <h1 class="text-center ">404</h1>
+                    </div>
+
+                    <div class="contant_box_404">
+                        <h3 class="h2">
+                            Look like you're lost
+                        </h3>
+                        <p>the page you are looking for not avaible!</p>
+                        <a href="./Index" class="link_404">Go to Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        swal({
+            title: "Good job!",
+            text: "You are booking successful!",
+            icon: "success",
+            button: "Done",
+        });
+    </script>
+}
+
+<script type="text/javascript">
+    function funcTotalPrice() {
+        var check_in = document.getElementById("check_in");
+        var check_out = document.getElementById("check_out");
+
+        var total = document.getElementById("total");
+        var totalCk = document.getElementById("abc");
+
+        var date1 = new Date(check_in.value);
+        var date2 = new Date(check_out.value);
+
+        // To calculate the time difference of two dates
+        var Difference_In_Time = date2.getTime() - date1.getTime();
+        // To calculate the no. of days between two dates
+        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24) + 1;
+
+        if (Difference_In_Days * @(Model.RoomHotel.RoomPrice) <= 0) {
+            total.value = "$" + parseFloat(@(Model.RoomHotel.RoomPrice)).toFixed(2);
+            totalCk.innerHTML = "$" + parseFloat(@(Model.RoomHotel.RoomPrice)).toFixed(2);
+        } else {
+            total.value = "$" + parseFloat(Difference_In_Days * @(Model.RoomHotel.RoomPrice)).toFixed(2);
+            totalCk.innerHTML = "$" + parseFloat(Difference_In_Days * @(Model.RoomHotel.RoomPrice)).toFixed(2);
+        }
+    }
+</script>
+
+

@@ -1,0 +1,62 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Orders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Order</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.OrderNote" class="control-label"></label>
+                <input asp-for="Order.OrderNote" class="form-control" required/>
+                <span asp-validation-for="Order.OrderNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.OrderCheckin" class="control-label"></label>
+                <input asp-for="Order.OrderCheckin" class="form-control" required />
+                <span asp-validation-for="Order.OrderCheckin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.OrderCheckout" class="control-label"></label>
+                <input asp-for="Order.OrderCheckout" class="form-control" required/>
+                <span asp-validation-for="Order.OrderCheckout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.OrderCreated" class="control-label"></label>
+                <input class="form-control" asp-for="@ViewData["date"]" disabled />
+                <span asp-validation-for="@ViewData["date"]" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.OrderStatus" class="control-label"></label>
+                <select class="form-control" aria-label=".form-select-lg example" asp-for="@Model.selected">
+                    <option value="1">Active</option>
+                    <option value="0">DeActive</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.User" class="control-label"></label>
+                <select asp-for="Order.UserId" class="form-control" asp-items="ViewBag.UserName"></select>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary mt-3">
+        <a class="text-decoration-none text-white" asp-page="./Index">Back to List</a>
+    </button>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
