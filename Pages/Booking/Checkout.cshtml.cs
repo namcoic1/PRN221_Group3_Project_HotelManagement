@@ -48,8 +48,9 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Booking
                 {
                     RoomId = od.RoomId,
                     Check_in = o.OrderCheckin,
-                    Check_out = o.OrderCheckout
-                }).Where(od => od.RoomId == rid && od.Check_out.Value.Date >= DateTime.Now.Date)
+                    Check_out = o.OrderCheckout,
+                    Status = o.OrderStatus,
+                }).Where(od => od.RoomId == rid && od.Check_out.Value.Date >= DateTime.Now.Date && od.Status == 1)
                 .ToList();
 
             if (orderRoom != null) 
@@ -72,8 +73,9 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Booking
                 {
                     RoomId = od.RoomId,
                     Check_in = o.OrderCheckin,
-                    Check_out = o.OrderCheckout
-                }).Where(od => od.RoomId == rid && od.Check_out.Value.Date >= DateTime.Now.Date)
+                    Check_out = o.OrderCheckout,
+                    Status = o.OrderStatus,
+                }).Where(od => od.RoomId == rid && od.Check_out.Value.Date >= DateTime.Now.Date && od.Status == 1)
                 .ToList();
 
             if (orderRoom != null)
@@ -106,23 +108,26 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Booking
 
             foreach (var item in orderRoom)
             {
-                DateTime checkInOrder = item.Check_in.Value.Date;
-                DateTime checkOutOrder = item.Check_out.Value.Date;
+                if (item.Status == 1)
+                {
+                    DateTime checkInOrder = item.Check_in.Value.Date;
+                    DateTime checkOutOrder = item.Check_out.Value.Date;
 
-                if (checkInOrder <= Checkin && Checkin <= checkOutOrder)
-                {
-                    ViewData["Error"] = "On the day of check-in, this room is already in use.";
-                    return Page();
-                }
-                if (checkInOrder <= Checkout && Checkout <= checkOutOrder)
-                {
-                    ViewData["Error"] = "On the day of check-out, this room is already in use.";
-                    return Page();
-                }
-                if(Checkin <= checkInOrder && checkInOrder <= Checkout)
-                {
-                    ViewData["Error"] = "From check-in to check-out, the room is already in use.";
-                    return Page();
+                    if (checkInOrder <= Checkin && Checkin <= checkOutOrder)
+                    {
+                        ViewData["Error"] = "On the day of check-in, this room is already in use.";
+                        return Page();
+                    }
+                    if (checkInOrder <= Checkout && Checkout <= checkOutOrder)
+                    {
+                        ViewData["Error"] = "On the day of check-out, this room is already in use.";
+                        return Page();
+                    }
+                    if (Checkin <= checkInOrder && checkInOrder <= Checkout)
+                    {
+                        ViewData["Error"] = "From check-in to check-out, the room is already in use.";
+                        return Page();
+                    }
                 }
             }
 

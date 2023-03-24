@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\logo_hotel.png"
     },
     {
+      "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\dog1.png",
+      "PackagePath": "staticwebassets\\images\\rooms\\dog1.png"
+    },
+    {
       "Id": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_binhthuan.png",
       "PackagePath": "staticwebassets\\images\\rooms\\hotel_binhthuan.png"
     },

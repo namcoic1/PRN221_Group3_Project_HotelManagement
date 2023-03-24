@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8R3qppxWupKAJrjC9hh8LL+cYK37XuQF9hNeWyyqVLc=",
+  "Hash": "mVSachNxcuIH8NhjAKtiv00Bh12ijPhtkAnZZjzSNpM=",
   "Source": "PRN221_Group3_Project_HotelManagement",
   "BasePath": "_content/PRN221_Group3_Project_HotelManagement",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo_hotel.png"
+    },
+    {
+      "Identity": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\dog1.png",
+      "SourceId": "PRN221_Group3_Project_HotelManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\",
+      "BasePath": "_content/PRN221_Group3_Project_HotelManagement",
+      "RelativePath": "images/rooms/dog1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\rooms\\dog1.png"
     },
     {
       "Identity": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\wwwroot\\images\\rooms\\hotel_binhthuan.png",

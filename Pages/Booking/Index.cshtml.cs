@@ -93,6 +93,8 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Booking
                 }
             }
 
+            roomsIQ = roomsIQ.Where(room => room.RoomStatus == 1);
+
             TotalPage = (int)Math.Ceiling(roomsIQ.Count() / (double)PageSize); ;
             TotalRoom = roomsIQ.Count();
             PageIndex = pageIndex ?? 1;
