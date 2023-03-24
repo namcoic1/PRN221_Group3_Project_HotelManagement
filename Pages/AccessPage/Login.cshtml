@@ -1,0 +1,62 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.AccessPage.LoginModel
+@{
+    ViewData["Title"] = "Login page";
+}
+<div class="container card mt-5 p-0" style="width:40%; background-color:antiquewhite">
+<div class="card-header">  
+    <h1 class="text-center" style="font-size:x-large">Login Hotel</h1>  
+</div>
+<div class="card-body">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form method="post">
+        <div class="form-group mb-2">
+            <label asp-for="@Model.UserPhone" class="form-label">Phone<span style="color:red">*</span></label>
+            <input asp-for="@Model.UserPhone" class="form-control">
+            <span asp-validation-for="@Model.UserPhone" class="text-danger"></span>
+        </div>    
+        <div class="form-group mb-2">
+            <label asp-for="@Model.UserPassword" class="form-label">Password<span style="color:red">*</span></label>
+            <input asp-for="@Model.UserPassword" class="form-control">
+            <span asp-validation-for="@Model.UserPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-2">
+            @*<input asp-for="@Model.Remember" type="checkbox" class="form-check-input">
+            <label asp-for="@Model.Remember" class="form-check-label">Remember me</label>*@
+            <label>@Html.CheckBox("Remember", Model.Remember) Remember me</label>
+        </div>
+        <div class="form-group mb-1 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" title="Log in hotel">Log in</button>
+        </div>
+    </form>
+</div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@section Scripts {
+    @if (Model.Message != null && Model.Message.Equals("Success"))
+    {
+        <script>
+            swal({
+                title: "Login successfully!",
+                text: "Let's click to 'OK' to go home!",
+                icon: "success",
+                button: "OK",
+            }).then(function () {
+                window.location = "../Index";
+            });
+        </script>
+    }
+    else if (Model.Message != null &&  Model.Message.Equals("Failure"))
+    {
+        <script>
+            swal({
+                title: "Login failure!",
+                text: "Phone or password is invalid. Let's click to 'Try again' to login again!",
+                icon: "error",
+                button: "Try again",
+            }).then(function () {
+                window.location = "/AccessPage/Login";
+            });
+        </script>
+    }
+}

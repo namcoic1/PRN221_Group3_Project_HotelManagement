@@ -1,18 +1,33 @@
-﻿<!DOCTYPE html>
+﻿@using PRN221_Group3_Project_HotelManagement.Models
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+
+@{
+    User user = null;
+    if (Context.Session.GetString("user") != null)
+    {
+        string json = Context.Session.GetString("user");
+        user = JsonConvert.DeserializeObject<User>(json);
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PRN221_Group3_Project_HotelManagement</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/PRN221_Group3_Project_HotelManagement.styles.css" asp-append-version="true" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 py-0">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PRN221_Group3_Project_HotelManagement</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index" title="Hotel home"><img src="/images/logo_hotel.png" style="height:50px; width:50px" alt="Image logo hotel"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,12 +35,45 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index" title="Home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Booking/Index" title="All rooms">List Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy" title="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact" title="Contact">Contact</a>
                         </li>
                     </ul>
+                    @if (user != null)
+                    {
+                         <div class="dropdown justify-content-end">       
+                                 <a class="nav-link text-dark dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">       
+                                 Hello, @user.UserName!       
+                             </a>       
+                             <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">       
+                                 <li><a class="dropdown-item" asp-area="" asp-page="/Profile/Index" title="Profile">My Profile</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Bookings/Index" title="Bookings">Bookings</a></li>
+                                @if (user.UserId == 1)       
+                                 {       
+                                     <li><a class="dropdown-item" asp-area="" asp-page="/Rooms/Index" title="Rooms management">Rooms Management</a></li>           
+                                     <li><a class="dropdown-item" asp-area="" asp-page="/Orders/Index" title="Orders management">Orders Management</a></li>           
+                                     <li><a class="dropdown-item" asp-area="" asp-page="/Users/Index" title="Users management">Users Management</a></li>           
+                                 }       
+                                 <li><hr class="dropdown-divider"></li>       
+                                 <li><a class="dropdown-item" asp-area="" asp-page="/AccessPage/Login" asp-page-handler="Logout" title="Log out hotel">Log out</a></li>       
+                             </ul>       
+                         </div>       
+                    }
+                    else
+                    {
+                        <div class="justify-content-end">    
+                            <button type="button" class="btn btn-primary"><a asp-area="" asp-page="/AccessPage/Login" style="color:white; text-decoration:none" title="Login page">Login</a></button>    
+                            <button type="button" class="btn btn-primary"><a asp-area="" asp-page="/AccessPage/Register" style="color:white; text-decoration:none" title="Register page">Register</a></button>    
+                        </div>    
+                    }
                 </div>
             </div>
         </nav>
@@ -38,13 +86,34 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - PRN221_Group3_Project_HotelManagement - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - Made with <i class="fa fa-heart text-danger"></i> by PRN221_Group3_Project_HotelManagement
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>     
+       $("#img_upload").change(function () {     
+           var file = this.files[0];     
+           var file_type = file.type;     
+           if (!file_type.startsWith("image/")) {     
+               swal("Warning!", "Please upload an image file!", "warning");     
+           } else {     
+               $("#img_preview").attr("src", URL.createObjectURL(file));     
+           }     
+       });     
+        $("#FileUpload").change(function () {
+            var file = this.files[0];     
+           var file_type = file.type;     
+           if (!file_type.startsWith("image/")) {     
+               swal("Warning!", "Please upload an image file!", "warning");     
+           } else {     
+               $("#img_preview").attr("src", URL.createObjectURL(file));     
+           }     
+       });  
+   </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PRN221_Group3_Project_HotelManagement.Models;
@@ -18,25 +14,32 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
             _context = context;
         }
 
-      public RoomHotel RoomHotel { get; set; }
+        public RoomHotel RoomHotel { get; set; }
+        public TypeRoom TypeRoom { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.RoomHotels == null)
+            if (HttpContext.Session.GetString("user") != null)
             {
-                return NotFound();
-            }
+                if (id == null || _context.RoomHotels == null)
+                {
+                    return NotFound();
+                }
 
-            var roomhotel = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
-            if (roomhotel == null)
-            {
-                return NotFound();
+                var roomhotel = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
+                var typeroom = await _context.TypeRooms.FirstOrDefaultAsync(t => t.TypeId == roomhotel.TypeId);
+                if (roomhotel == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    RoomHotel = roomhotel;
+                    TypeRoom = typeroom;
+                }
+                return Page();
             }
-            else 
-            {
-                RoomHotel = roomhotel;
-            }
-            return Page();
+            return RedirectToPage("/AccessPage/Login");
         }
     }
 }

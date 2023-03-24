@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using PRN221_Group3_Project_HotelManagement.Models;
 
 namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
@@ -19,26 +16,34 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
         }
 
         [BindProperty]
-      public RoomHotel RoomHotel { get; set; }
+        public RoomHotel RoomHotel { get; set; }
+        [BindProperty]
+        public TypeRoom TypeRoom { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.RoomHotels == null)
+            if (HttpContext.Session.GetString("user") != null)
             {
-                return NotFound();
-            }
+                if (id == null || _context.RoomHotels == null)
+                {
+                    return NotFound();
+                }
 
-            var roomhotel = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
+                var roomhotel = await _context.RoomHotels.FirstOrDefaultAsync(m => m.RoomId == id);
+                var typeroom = await _context.TypeRooms.FirstOrDefaultAsync(t => t.TypeId == roomhotel.TypeId);
 
-            if (roomhotel == null)
-            {
-                return NotFound();
+                if (roomhotel == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    RoomHotel = roomhotel;
+                    TypeRoom = typeroom;
+                }
+                return Page();
             }
-            else 
-            {
-                RoomHotel = roomhotel;
-            }
-            return Page();
+            return RedirectToPage("/AccessPage/Login");
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
@@ -54,6 +59,14 @@ namespace PRN221_Group3_Project_HotelManagement.Pages.Rooms
                 RoomHotel = roomhotel;
                 _context.RoomHotels.Remove(RoomHotel);
                 await _context.SaveChangesAsync();
+
+                var options = new JsonSerializerSettings
+                {
+                    Formatting = Formatting.Indented,
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+                string json = JsonConvert.SerializeObject(roomhotel, options);
+                HttpContext.Session.SetString("operate", json);
             }
 
             return RedirectToPage("./Index");

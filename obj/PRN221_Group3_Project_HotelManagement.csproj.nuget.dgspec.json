@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {}
+    "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {}
   },
   "projects": {
-    "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {
+    "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
+        "projectUniqueName": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
         "projectName": "PRN221_Group3_Project_HotelManagement",
-        "projectPath": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
+        "projectPath": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\PRN221_Group3_Project_HotelManagement.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ky7_Code\\PRN221_Code\\PRN221_Group3_Project_HotelManagement\\obj\\",
+        "outputPath": "D:\\ky7_Code\\PRN221_Code\\Git_NamNH\\PRN221_Group3_Project_HotelManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,17 +48,17 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.14, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.14, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.14, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",

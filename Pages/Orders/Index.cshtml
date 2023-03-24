@@ -1,0 +1,84 @@
+﻿@page
+@model PRN221_Group3_Project_HotelManagement.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<h1>Order Lists</h1>
+
+<div class="d-flex">
+    <div>
+        @*<button type="button" class="btn btn-primary">
+            <a class="text-decoration-none text-white" asp-page="Create">Create New</a>
+        </button>*@
+    </div>
+    <div class="ms-auto">
+        <form asp-page="./Index" method="get">
+            <div class="d-flex">
+                <input class="form-control" type="text" id="search" asp-for="SearchString" placeholder="Search by User Name"/>
+                <input class="btn btn-primary" type="submit" value="Search" /><br />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-hover table-light mt-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderCheckin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderCheckout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].User)
+            </th>
+            <th class="">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderCheckin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderCheckout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderCreated)
+            </td>
+            <td>
+                    @if(item.OrderStatus == 1){
+                        <p>Active</p>
+                    }
+                    @if (item.OrderStatus == 0)
+                    {
+                        <p>DeActive</p>
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            <td class="" >
+                <a class="text-decoration-none" asp-page="./Edit" asp-route-id="@item.OrderId">Edit</a> |
+                    <a class="text-decoration-none" asp-page="./Details" asp-route-id="@item.OrderId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
